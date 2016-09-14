@@ -70,7 +70,7 @@ The code you just read will give the following result (the time will be differen
 [End of statistics]
 
 ```
-As you can see, the output is formatted properly: you can see the thread id, the time, the severity and origin flags and the actual message. If you want, you can easily change the formatting of the output with the `setFormat()` method. (Try adding `logger.setFormat("<%t> <On %Y-%m-d, at %H:%M:%S; %s, from %o> <%v>");` before the logger's `operator()` call).
+As you can see, the output is formatted properly: you can see the thread id, the time, the severity and origin flags and the actual message. If you want, you can easily change the formatting of the output with the `setFormat()` method. (Try adding `eo::getCoutTarget()->setFormat("<%i> <On %Y-%m-%d, at %H:%M:%S; %s, from %o> <%v>");` before the logger's `operator()` call).
 
 To get a full understanding about the design and the possibilities of the library, see `DOC.md` (NOT CREATED YET)
 
