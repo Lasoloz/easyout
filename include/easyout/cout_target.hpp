@@ -9,6 +9,8 @@
 
 #pragma once
 
+#include <iostream>
+
 #include "basic_target.hpp"
 
 namespace easyout

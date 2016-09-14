@@ -190,7 +190,7 @@ public:
     {
         //Create a format meta which will hold the constant references of the
         //important strings
-        FormatMeta fmeta(message, origin, severity);
+        FormatMeta fmeta(message, severity, origin);
 
         //Set filling character
         //(We need 12:34:56.078 as time, not 12:34:56. 78, which is technically
