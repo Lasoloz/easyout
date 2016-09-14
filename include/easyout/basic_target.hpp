@@ -1,5 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2016 Heim László
+//
+// This library is distributed under MIT License
+// (https://opensource.org/licenses/MIT)
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #pragma once
 
+#include <vector>
+#include <string>
+#include <sstream>
 #include <bitset>
 #include <mutex>
 
@@ -95,7 +107,7 @@ public:
         }
     }
 
-    void setFormat(const std::string& _fmt = "[%i] [%Y-%m-%d] [%H:%M:%S.%J] "
+    void setFormat(const std::string& _fmt = "[%i] [%Y-%m-%d] [%H:%M:%S.%q] "
                    "[%s] [%o] %v"
                    )
     {
@@ -153,6 +165,10 @@ protected:
     format::Formatter fmt;
 
 };
+
+
+
+
 
 
 

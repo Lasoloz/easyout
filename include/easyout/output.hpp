@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2016 Heim László
+//
+// This library is distributed under MIT License
+// (https://opensource.org/licenses/MIT)
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #pragma once
 
 #include <forward_list>
@@ -9,6 +18,8 @@
 
 namespace easyout
 {
+
+typedef std::forward_list<std::shared_ptr<Target>>::iterator TargIterator;
 
 class Output
 {
@@ -30,19 +41,13 @@ public:
         return *this;
     }
 
-    std::forward_list
-      <std::shared_ptr
-        <Target
-         >>::iterator addTarget(std::shared_ptr<Target> targ)
+    TargIterator addTarget(std::shared_ptr<Target> targ)
     {
         targets.push_front(targ);
         return targets.before_begin();
     }
 
-    std::forward_list
-      <std::shared_ptr
-        <Target
-         >>::iterator addTarget(const std::string& filename)
+    TargIterator addTarget(const std::string& filename)
     {
         std::shared_ptr<Target> targ = std::make_shared<FileTarget>(filename);
         setFileNormally(targ);

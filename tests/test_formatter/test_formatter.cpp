@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2016 Heim László
+//
+// This library is distributed under MIT License
+// (https://opensource.org/licenses/MIT)
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include <sstream>
 
@@ -14,7 +23,7 @@ int main()
     format.writeToOss(oss, "Debug", "Core", "This is the actual message!");
     format.writeToOss(oss, "Warning", "Network", "This is another message!");
 
-    format.setFormat("%i Year: %Y; Time: %H:%M:%S.%f %m-%d %s %o %v");
+    format.setFormat("%i %%Year: %Y%% %%Time: %H:%M:%S.%f%% %%%m-%d%% %s %o %v");
 
     format.writeToOss(oss, "Debug", "Core", "This is the actual message!");
 
