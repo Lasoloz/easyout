@@ -1,4 +1,4 @@
-# easyout
+﻿# easyout
 
 ## Briefing
 
@@ -10,7 +10,7 @@ I created this library when I wanted to output information to different targets 
 
 ## Intruduction to the features
 
-First let's see a little example using the library. Plain documention in the `DOC.md` (NOT CREATED YET) file.
+First let's see a little example using the library. You can also try the [tutorial](https://github.com/Lasoloz/easyout/tree/master/doc/tut) and the [documentation](https://github.com/Lasoloz/easyout/tree/master/doc/gen).
 
 ### Making a logger using cout target
 
@@ -72,7 +72,7 @@ The code you just read will give the following result (the time will be differen
 ```
 As you can see, the output is formatted properly: you can see the thread id, the time, the severity and origin flags and the actual message. If you want, you can easily change the formatting of the output with the `setFormat()` method. (Try adding `logger.setFormat("<%t> <On %Y-%m-d, at %H:%M:%S; %s, from %o> <%v>");` before the logger's `operator()` call).
 
-To get a full understanding about the design and the possibilities of the library, see `DOC.md` (NOT CREATED YET)
+To get a full understanding about the design and the possibilities of the library, see the [tutorial](https://github.com/Lasoloz/easyout/tree/master/doc/tut) or the [documentation](https://github.com/Lasoloz/easyout/tree/master/doc/gen).
 
 ## Legal notice
 The library is under MIT license.

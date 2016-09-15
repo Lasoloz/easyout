@@ -19,7 +19,7 @@
 namespace easyout
 {
 
-typedef std::forward_list<std::shared_ptr<Target>>::iterator TargIterator;
+typedef std::forward_list<std::shared_ptr<Target>>::iterator TargMarker;
 
 class Output
 {
@@ -41,13 +41,13 @@ public:
         return *this;
     }
 
-    TargIterator addTarget(std::shared_ptr<Target> targ)
+    TargMarker addTarget(std::shared_ptr<Target> targ)
     {
         targets.push_front(targ);
         return targets.before_begin();
     }
 
-    TargIterator addTarget(const std::string& filename)
+    TargMarker addTarget(const std::string& filename)
     {
         std::shared_ptr<Target> targ = std::make_shared<FileTarget>(filename);
         setFileNormally(targ);
@@ -55,7 +55,7 @@ public:
         return targets.before_begin();
     }
 
-    void removeTarget(std::forward_list<std::shared_ptr<Target>>::iterator& it)
+    void removeTarget(TargMarker& it)
     {
         targets.erase_after(it);
     }
