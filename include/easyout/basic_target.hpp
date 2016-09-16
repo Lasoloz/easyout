@@ -102,6 +102,15 @@ public:
     {
         if (key>= 0 && key < 16)
         {
+            s_keyhole.set(key, false);
+            s_statistics[key].reset();
+        }
+    }
+
+    inline void removeOriginKey(const std::size_t key)
+    {
+        if (key >= 0 && key < 16)
+        {
             o_keyhole.set(key, false);
             o_statistics[key].reset();
         }

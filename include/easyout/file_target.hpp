@@ -16,9 +16,6 @@
 namespace easyout
 {
 
-namespace
-{
-
 class FileTarget : public Target
 {
 public:
@@ -71,8 +68,6 @@ private:
     std::ofstream ofs;
 
 };
-
-}//hidden namespace
 
 std::shared_ptr<Target> openFileTarget(const std::string& filename)
 {

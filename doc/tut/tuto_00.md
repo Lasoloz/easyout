@@ -14,4 +14,8 @@ Formatter has it's own subinstances: `FormatInstance` classes are used to repres
 
 ## 1.2 Target
 
-The target makes the whole thing thread-safe. It has it's very own mutex, and it also has a bitset. This bitset is called the "keyhole". There is a severity keyhole and an origin keyhole. Actually it does nothing, just checks whether the message has the correct keys - whether it should be output.
+The target makes the whole thing thread-safe. It has it's very own mutex, and it also has two bitsets. This bitsets are called the "keyholes". There is a severity keyhole and an origin keyhole. Actually it just checks whether the message has the correct keys - whether it should be output. Currently there are two target types: the cout target and the file target.
+
+## 1.3 Output
+
+The output (it's probably not the best name) translates the argument list of its `operator()` call to an `std::string`, which is then transmitted to all of its targets.
