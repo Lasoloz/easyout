@@ -75,10 +75,10 @@ public:
         o_statistics.resize(16);
     }
 
-    inline void addSeverityKey(const std::size_t key, const std::string& keyname
-                               )
+    void addSeverityKey(const std::size_t key, const std::string& keyname
+                        )
     {
-        if (key >= 0 && key < 16)
+        if (key < 16)
         {
             s_keyhole.set(key);
             s_statistics[key] = std::move(std::unique_ptr<TargetMeta>
@@ -87,9 +87,9 @@ public:
         }
     }
 
-    inline void addOriginKey(const std::size_t key, const std::string& keyname)
+    void addOriginKey(const std::size_t key, const std::string& keyname)
     {
-        if (key >= 0 && key < 16)
+        if (key < 16)
         {
             o_keyhole.set(key);
             o_statistics[key] = std::move(std::unique_ptr<TargetMeta>
@@ -98,18 +98,18 @@ public:
         }
     }
 
-    inline void removeSeverityKey(const std::size_t key)
+    void removeSeverityKey(const std::size_t key)
     {
-        if (key>= 0 && key < 16)
+        if (key < 16)
         {
             s_keyhole.set(key, false);
             s_statistics[key].reset();
         }
     }
 
-    inline void removeOriginKey(const std::size_t key)
+    void removeOriginKey(const std::size_t key)
     {
-        if (key >= 0 && key < 16)
+        if (key < 16)
         {
             o_keyhole.set(key, false);
             o_statistics[key].reset();
@@ -147,9 +147,9 @@ public:
     }
 
 protected:
-    inline bool testKeys(const std::size_t s_key,
-                         const std::size_t o_key
-                         )
+    bool testKeys(const std::size_t s_key,
+                  const std::size_t o_key
+                  )
     {
         if (s_keyhole.test(s_key) && o_keyhole.test(o_key))
         {
@@ -182,7 +182,7 @@ protected:
 
 
 //Add severity keys
-void addDefaultSeverityKey(std::shared_ptr<Target> ptr,
+inline void addDefaultSeverityKey(std::shared_ptr<Target> ptr,
                            const std::size_t which,
                            const bool fullName = true
                            )
@@ -212,6 +212,15 @@ void addDefaultSeverityKey(std::shared_ptr<Target> ptr,
         }
         break;
     case Severity::HiddenE:
+        if (fullName)
+        {
+            name = "Error  *";
+        }
+        else
+        {
+            name = "Err*";
+        }
+        break;
     case Severity::Error:
         if (fullName)
         {
@@ -223,6 +232,15 @@ void addDefaultSeverityKey(std::shared_ptr<Target> ptr,
         }
         break;
     case Severity::HiddenW:
+        if (fullName)
+        {
+            name = "Warning*";
+        }
+        else
+        {
+            name = "War*";
+        }
+        break;
     case Severity::Warning:
         if (fullName)
         {
@@ -234,6 +252,15 @@ void addDefaultSeverityKey(std::shared_ptr<Target> ptr,
         }
         break;
     case Severity::HiddenI:
+        if (fullName)
+        {
+            name = "Info   *";
+        }
+        else
+        {
+            name = "Inf*";
+        }
+        break;
     case Severity::Info:
         if (fullName)
         {
@@ -279,7 +306,7 @@ void addDefaultSeverityKey(std::shared_ptr<Target> ptr,
     ptr->addSeverityKey(which, name);
 }
 
-void addDefaultOriginKey(std::shared_ptr<Target> ptr,
+inline void addDefaultOriginKey(std::shared_ptr<Target> ptr,
                          const std::size_t which,
                          const bool fullName = true
                          )
@@ -373,7 +400,7 @@ void addDefaultOriginKey(std::shared_ptr<Target> ptr,
     ptr->addOriginKey(which, name);
 }
 
-void addAllDefaultSeverityKeys(std::shared_ptr<Target> ptr,
+inline void addAllDefaultSeverityKeys(std::shared_ptr<Target> ptr,
                                const bool fullName = true
                                )
 {
@@ -389,7 +416,7 @@ void addAllDefaultSeverityKeys(std::shared_ptr<Target> ptr,
     addDefaultSeverityKey(ptr, Severity::Message , fullName);
 }
 
-void addAllDefaultOriginKeys(std::shared_ptr<Target> ptr,
+inline void addAllDefaultOriginKeys(std::shared_ptr<Target> ptr,
                              const bool fullName = true
                              )
 {

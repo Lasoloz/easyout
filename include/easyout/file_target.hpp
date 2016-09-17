@@ -69,16 +69,16 @@ private:
 
 };
 
-std::shared_ptr<Target> openFileTarget(const std::string& filename)
+inline std::shared_ptr<Target> openFileTarget(const std::string& filename)
 {
     std::shared_ptr<Target> ptr = std::make_shared<FileTarget>(filename);
     return ptr;
 }
 
-void setFileNormally(std::shared_ptr<Target> ptr,
-                     const bool verboseFormat = true,
-                     const bool verboseNames = true
-                     )
+inline void setFileNormally(std::shared_ptr<Target> ptr,
+                            const bool verboseFormat = true,
+                            const bool verboseNames = true
+                            )
 {
     addAllDefaultSeverityKeys(ptr, verboseNames);
     addAllDefaultOriginKeys(ptr, verboseNames);

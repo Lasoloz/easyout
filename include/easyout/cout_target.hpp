@@ -70,7 +70,7 @@ std::shared_ptr<Target> coutTarget_ptr;
 }//hidden namespace
 
 //Get the cout target
-std::shared_ptr<Target> getCoutTarget()
+inline std::shared_ptr<Target> getCoutTarget()
 {
     if (coutTarget_ptr == nullptr)
     {
@@ -81,9 +81,9 @@ std::shared_ptr<Target> getCoutTarget()
 }
 
 //Set the cout target normally (all severities and origins)
-void setCoutNormally(const bool verboseFormat = false,
-                     const bool verboseNames = false
-                     )
+inline void setCoutNormally(const bool verboseFormat = false,
+                            const bool verboseNames = false
+                            )
 {
     std::shared_ptr<Target> ptr(getCoutTarget());
     addAllDefaultSeverityKeys(ptr, verboseNames);
@@ -99,9 +99,9 @@ void setCoutNormally(const bool verboseFormat = false,
 }
 
 //Set the cout target with less options (less severity and all origins)
-void setCoutRestricted(const bool verboseFormat = false,
-                       const bool verboseNames = false
-                       )
+inline void setCoutRestricted(const bool verboseFormat = false,
+                              const bool verboseNames = false
+                              )
 {
     std::shared_ptr<Target> ptr(getCoutTarget());
     addDefaultSeverityKey(ptr, Severity::Trace, verboseNames);
