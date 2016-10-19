@@ -1,0 +1,35 @@
+[139870797145920] [2016-09-27] [21:26:43.670046] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670194] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670327] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670464] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670531] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670594] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670669] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670737] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670801] [Warning ] [In/Output] Testing warnings
+[139870797145920] [2016-09-27] [21:26:43.670866] [Warning ] [In/Output] Testing warnings
+
+[Message] Writing finished successfully on file target!
+[Statistics]
+ [Severity]
+           0 Trace    message
+           0 Debug    message
+           0 Error  * message
+           0 Warning* message
+           0 Info   * message
+           0 Error    message
+          10 Warning  message
+           0 Info     message
+           0 Critical message
+           0 Message  message
+ [End of severity statistics]
+ [Origin of log]
+           0 Core      message
+          10 In/Output message
+           0 Threading message
+           0 Network   message
+           0 Window    message
+           0 Graphics  message
+           0 Audio     message
+ [End of origin statistics]
+[End of statistics]
