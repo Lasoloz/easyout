@@ -43,5 +43,7 @@ int main()
     thr1.join();
     thr2.join();
 
+    logger(easyout::Severity::Info, easyout::Origin::Core, "Threads finished!");
+
     return 0;
 }
